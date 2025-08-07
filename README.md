@@ -6,6 +6,8 @@
 
 A highly customizable React component library for code input fields. Perfect for verification codes, OTP inputs, PIN entries, and more. Supports two distinct design patterns: individual boxes and single line inputs.
 
+![banner](https://github.com/enesmuzaffer22/react-segmented-input/blob/main/banner.png)
+
 ## 🚀 Features
 
 - ✅ **Two Design Variants**: Box-style (individual inputs) and Line-style (single input with spacing)
