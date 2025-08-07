@@ -14,6 +14,7 @@ export interface BoxCodeInputProps {
   borderRadius?: number;
   width?: number;
   height?: number;
+  gap?: number;
   numberOfChars: number;
   separatorPositions?: number[];
   separatorChar?: string;

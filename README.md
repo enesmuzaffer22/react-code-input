@@ -27,52 +27,156 @@ npm install react-segmented-input
 
 ## 🎯 Quick Start
 
-### BoxCodeInput (Individual Boxes)
+> Don't forget import package styles!
 
 ```jsx
-import React from "react";
-import { BoxCodeInput } from "react-segmented-input";
-
-function App() {
-  const handleComplete = (value) => {
-    console.log("Code entered:", value);
-  };
-
-  return (
-    <BoxCodeInput
-      numberOfChars={6}
-      separatorPositions={[3]}
-      separatorChar="-"
-      onChange={(value) => console.log("Current value:", value)}
-      onComplete={handleComplete}
-      autoFocus
-    />
-  );
-}
+import "react-segmented-input/style.css";
 ```
 
-### LineCodeInput (Single Line with Spacing)
+### JavaScript Usage
+
+#### BoxCodeInput (Individual Boxes)
 
 ```jsx
-import React from "react";
-import { LineCodeInput } from "react-segmented-input";
+import React, { useRef } from "react";
+import { BoxCodeInput } from "react-segmented-input";
+import "react-segmented-input/style.css";
 
 function App() {
+  const inputRef = useRef(null);
+
+  const handleComplete = (value) => {
+    console.log("Code entered:", value);
+  };
+
+  const getValue = () => {
+    const value = inputRef.current?.getValue();
+    console.log("Current value:", value);
+  };
+
+  return (
+    <div>
+      <BoxCodeInput
+        ref={inputRef}
+        numberOfChars={6}
+        separatorPositions={[3]}
+        separatorChar="-"
+        gap={12}
+        onChange={(value) => console.log("Current value:", value)}
+        onComplete={handleComplete}
+        autoFocus
+      />
+      <button onClick={getValue}>Get Value</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+#### LineCodeInput (Single Line with Spacing)
+
+```jsx
+import React, { useRef } from "react";
+import { LineCodeInput } from "react-segmented-input";
+import "react-segmented-input/style.css";
+
+function App() {
+  const inputRef = useRef(null);
+
   const handleComplete = (value) => {
     console.log("Code entered:", value);
   };
 
   return (
-    <LineCodeInput
-      numberOfChars={8}
-      separatorPositions={[4]}
-      separatorChar="/"
-      letterSpacing={12}
-      onChange={(value) => console.log("Current value:", value)}
-      onComplete={handleComplete}
-    />
+    <div>
+      <LineCodeInput
+        ref={inputRef}
+        numberOfChars={8}
+        separatorPositions={[4]}
+        separatorChar="/"
+        letterSpacing={12}
+        onChange={(value) => console.log("Current value:", value)}
+        onComplete={handleComplete}
+      />
+    </div>
   );
 }
+
+export default App;
+```
+
+### TypeScript Usage
+
+#### BoxCodeInput with TypeScript
+
+```tsx
+import React, { useRef } from "react";
+import { BoxCodeInput, CodeInputRef } from "react-segmented-input";
+import "react-segmented-input/style.css";
+
+function App(): JSX.Element {
+  const inputRef = useRef<CodeInputRef>(null);
+
+  const handleComplete = (value: string): void => {
+    console.log("Code entered:", value);
+  };
+
+  const getValue = (): void => {
+    const value = inputRef.current?.getValue();
+    console.log("Current value:", value);
+  };
+
+  return (
+    <div>
+      <BoxCodeInput
+        ref={inputRef}
+        numberOfChars={6}
+        separatorPositions={[3]}
+        separatorChar="-"
+        gap={12}
+        onChange={(value: string) => console.log("Current value:", value)}
+        onComplete={handleComplete}
+        autoFocus
+      />
+      <button onClick={getValue}>Get Value</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+#### LineCodeInput with TypeScript
+
+```tsx
+import React, { useRef } from "react";
+import { LineCodeInput, CodeInputRef } from "react-segmented-input";
+import "react-segmented-input/style.css";
+
+function App(): JSX.Element {
+  const inputRef = useRef<CodeInputRef>(null);
+
+  const handleComplete = (value: string): void => {
+    console.log("Code entered:", value);
+  };
+
+  return (
+    <div>
+      <LineCodeInput
+        ref={inputRef}
+        numberOfChars={8}
+        separatorPositions={[4]}
+        separatorChar="/"
+        letterSpacing={12}
+        onChange={(value: string) => console.log("Current value:", value)}
+        onComplete={handleComplete}
+      />
+    </div>
+  );
+}
+
+export default App;
 ```
 
 ## 📚 API Reference
@@ -96,6 +200,7 @@ function App() {
 | `borderRadius`       | `number`                  | `4`             | Border radius in pixels                              |
 | `width`              | `number`                  | `40`            | Width of each box in pixels                          |
 | `height`             | `number`                  | `40`            | Height of each box in pixels                         |
+| `gap`                | `number`                  | `8`             | Space between boxes in pixels                        |
 | `separatorPositions` | `number[]`                | `[]`            | Positions where separators should appear             |
 | `separatorChar`      | `string`                  | `'-'`           | Character to use as separator                        |
 | `onChange`           | `(value: string) => void` | -               | Called when value changes                            |
@@ -157,12 +262,15 @@ Both components support ref methods for programmatic control:
 
 ### Using Refs for Programmatic Control
 
+#### JavaScript Version
+
 ```jsx
 import React, { useRef } from "react";
-import { BoxCodeInput, CodeInputRef } from "react-segmented-input";
+import { BoxCodeInput } from "react-segmented-input";
+import "react-segmented-input/style.css";
 
 function App() {
-  const inputRef = useRef < CodeInputRef > null;
+  const inputRef = useRef(null);
 
   const handleGetValue = () => {
     const value = inputRef.current?.getValue();
@@ -194,6 +302,52 @@ function App() {
     </div>
   );
 }
+
+export default App;
+```
+
+#### TypeScript Version
+
+```tsx
+import React, { useRef } from "react";
+import { BoxCodeInput, CodeInputRef } from "react-segmented-input";
+import "react-segmented-input/style.css";
+
+function App(): JSX.Element {
+  const inputRef = useRef<CodeInputRef>(null);
+
+  const handleGetValue = (): void => {
+    const value = inputRef.current?.getValue();
+    alert(`Current value: ${value}`);
+  };
+
+  const handleClear = (): void => {
+    inputRef.current?.clear();
+  };
+
+  const handleSetValue = (): void => {
+    inputRef.current?.setValue("123456");
+  };
+
+  return (
+    <div>
+      <BoxCodeInput
+        ref={inputRef}
+        numberOfChars={6}
+        borderColor="#3b82f6"
+        backgroundColor="white"
+      />
+
+      <div>
+        <button onClick={handleGetValue}>Get Value</button>
+        <button onClick={handleClear}>Clear</button>
+        <button onClick={handleSetValue}>Set Value</button>
+      </div>
+    </div>
+  );
+}
+
+export default App;
 ```
 
 ### Phone Number Input

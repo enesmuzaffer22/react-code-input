@@ -49,6 +49,7 @@ function App() {
             borderRadius={8}
             width={50}
             height={50}
+            gap={4}
             onChange={setBoxValue}
             onComplete={handleBoxComplete}
             autoFocus
@@ -97,6 +98,7 @@ function App() {
           fontSize={16}
           width={35}
           height={40}
+          gap={6}
           placeholder="0"
         />
 

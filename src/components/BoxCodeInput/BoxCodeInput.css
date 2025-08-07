@@ -1,7 +1,6 @@
 .box-code-input {
   display: flex;
   align-items: center;
-  gap: 8px;
   font-family: inherit;
 }
 
@@ -32,16 +31,11 @@
   color: #6b7280;
   font-weight: 500;
   user-select: none;
-  margin: 0 4px;
 }
 
 /* Responsive ayarları */
 @media (max-width: 640px) {
-  .box-code-input {
-    gap: 4px;
-  }
-
   .box-code-input__separator {
-    margin: 0 2px;
+    font-size: 0.9em;
   }
 }

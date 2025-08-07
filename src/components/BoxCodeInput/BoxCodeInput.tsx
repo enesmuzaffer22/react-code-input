@@ -27,6 +27,7 @@ const BoxCodeInput = forwardRef<CodeInputRef, BoxCodeInputProps>(
       borderRadius = 4,
       width = 40,
       height = 40,
+      gap = 8,
       numberOfChars,
       separatorPositions = [],
       separatorChar = "-",
@@ -118,7 +119,6 @@ const BoxCodeInput = forwardRef<CodeInputRef, BoxCodeInputProps>(
       height: `${height}px`,
       textAlign: "center",
       outline: "none",
-      ...style,
     });
 
     // Event handlers
@@ -207,7 +207,11 @@ const BoxCodeInput = forwardRef<CodeInputRef, BoxCodeInputProps>(
     };
 
     return (
-      <div className={`box-code-input ${className}`} onPaste={handlePaste}>
+      <div
+        className={`box-code-input ${className}`}
+        onPaste={handlePaste}
+        style={{ gap: `${gap}px`, ...style }}
+      >
         {values.map((value, index) => (
           <React.Fragment key={index}>
             <input
