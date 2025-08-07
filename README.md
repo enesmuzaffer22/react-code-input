@@ -1,6 +1,6 @@
-# React Code Input
+# React Segmented Input
 
-[![npm version](https://badge.fury.io/js/react-code-input.svg)](https://www.npmjs.com/package/react-code-input)
+[![npm version](https://badge.fury.io/js/react-segmented-input.svg)](https://www.npmjs.com/package/react-segmented-input)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
@@ -22,7 +22,7 @@ A highly customizable React component library for code input fields. Perfect for
 ## 📦 Installation
 
 ```bash
-npm install react-code-input
+npm install react-segmented-input
 ```
 
 ## 🎯 Quick Start
@@ -31,7 +31,7 @@ npm install react-code-input
 
 ```jsx
 import React from "react";
-import { BoxCodeInput } from "react-code-input";
+import { BoxCodeInput } from "react-segmented-input";
 
 function App() {
   const handleComplete = (value) => {
@@ -55,7 +55,7 @@ function App() {
 
 ```jsx
 import React from "react";
-import { LineCodeInput } from "react-code-input";
+import { LineCodeInput } from "react-segmented-input";
 
 function App() {
   const handleComplete = (value) => {
@@ -159,7 +159,7 @@ Both components support ref methods for programmatic control:
 
 ```jsx
 import React, { useRef } from "react";
-import { BoxCodeInput, CodeInputRef } from "react-code-input";
+import { BoxCodeInput, CodeInputRef } from "react-segmented-input";
 
 function App() {
   const inputRef = useRef < CodeInputRef > null;
@@ -420,7 +420,7 @@ The components include responsive breakpoints:
 
 ```jsx
 import { render, fireEvent, screen } from "@testing-library/react";
-import { BoxCodeInput } from "react-code-input";
+import { BoxCodeInput } from "react-segmented-input";
 
 test("handles input correctly", () => {
   const handleChange = jest.fn();
@@ -472,9 +472,9 @@ If you find this package helpful, please consider:
 
 ## 🔗 Links
 
-- [NPM Package](https://www.npmjs.com/package/react-code-input)
-- [GitHub Repository](https://github.com/yourusername/react-code-input)
-- [Issues](https://github.com/yourusername/react-code-input/issues)
+- [NPM Package](https://www.npmjs.com/package/react-segmented-input)
+- [GitHub Repository](https://github.com/yourusername/react-segmented-input)
+- [Issues](https://github.com/yourusername/react-segmented-input/issues)
 - [Changelog](CHANGELOG.md)
 
 ---
