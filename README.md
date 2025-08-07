@@ -25,14 +25,6 @@ A highly customizable React component library for code input fields. Perfect for
 npm install react-code-input
 ```
 
-```bash
-yarn add react-code-input
-```
-
-```bash
-pnpm add react-code-input
-```
-
 ## 🎯 Quick Start
 
 ### BoxCodeInput (Individual Boxes)
