@@ -1,6 +1,6 @@
 {
   "name": "react-segmented-input",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Highly customizable React components for code input fields with TypeScript support",
   "type": "module",
   "main": "dist/index.umd.js",
