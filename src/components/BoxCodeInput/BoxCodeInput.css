@@ -1,0 +1,47 @@
+.box-code-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+}
+
+.box-code-input__field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  caret-color: currentColor;
+}
+
+.box-code-input__field:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  border-color: #3b82f6;
+}
+
+.box-code-input__field:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f3f4f6;
+}
+
+.box-code-input__separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-weight: 500;
+  user-select: none;
+  margin: 0 4px;
+}
+
+/* Responsive ayarları */
+@media (max-width: 640px) {
+  .box-code-input {
+    gap: 4px;
+  }
+
+  .box-code-input__separator {
+    margin: 0 2px;
+  }
+}

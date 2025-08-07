@@ -1,0 +1,93 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+}
+
+.app h1 {
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 3rem;
+}
+
+.demo-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.demo-section h2 {
+  color: #374151;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.demo-section h3 {
+  color: #4b5563;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.demo-section p {
+  text-align: center;
+  color: #6b7280;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.controls button {
+  padding: 0.75rem 1.5rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.controls button:hover {
+  background: #2563eb;
+}
+
+.controls button:active {
+  transform: translateY(1px);
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .demo-section {
+    padding: 1rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .controls button {
+    width: 200px;
+  }
+}

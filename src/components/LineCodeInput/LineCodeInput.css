@@ -1,0 +1,37 @@
+.line-code-input {
+  display: inline-block;
+  font-family: inherit;
+}
+
+.line-code-input__field {
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  caret-color: currentColor;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.line-code-input__field:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  border-color: #3b82f6;
+}
+
+.line-code-input__field:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f3f4f6;
+}
+
+/* Placeholder styling */
+.line-code-input__field::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+
+/* Responsive ayarları */
+@media (max-width: 640px) {
+  .line-code-input__field {
+    font-size: 14px !important;
+    letter-spacing: 4px !important;
+    padding: 8px 12px !important;
+  }
+}
